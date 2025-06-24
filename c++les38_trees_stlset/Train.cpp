@@ -14,6 +14,15 @@ Train::Train(string number, string timedeparture, string station)
 	this->station = station;
 }
 
+bool Train::operator<(const Train& obj) const
+{
+	if (this->timedeparture < obj.timedeparture) { return true; }
+	else if (this->timedeparture == obj.timedeparture) {
+		if (this->number < obj.number) { return true; }
+	}
+	return false;
+}
+
 void Train::setNumber(string number)
 {
 	this->number = number;
